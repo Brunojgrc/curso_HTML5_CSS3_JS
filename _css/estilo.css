@@ -88,8 +88,8 @@ nav#menu ul {
 list-style: none;
 text-transform: uppercase;
 position: absolute;
-top: 0px;
-left:300px;
+top: -20px;
+left: 400px;
 }
 nav#menu li {
 	display: inline-block;
@@ -131,8 +131,34 @@ table#tabelaspec{
 table#tabelaspec td{
 	border: 1px solid #606060;
 	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+table#tabelaspec td.ce{
+	color: white;
+	background-color: #606060;
+	vertical-align: top;
+	font-weight: bold;
 
 }
+
+table#tabelaspec td.cd{
+	background-color: #cecece;
+
+}
+table#tabelaspec caption{
+	color: #888888;
+	font-size: 13pt;
+	font-weight: bolder;
+}
+table#tabelaspec span{
+	display: block;
+	float: right;
+	color: #606060;
+	font-size: 8pt;
+	margin-top: 10px;
+}
+
 aside#lateral{
 	display: block;
 	width: 350px;
@@ -145,3 +171,4 @@ footer#rodape{
 footer#rodape p {
 	text-align: center;
 }
+
