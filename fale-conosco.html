@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <title>Tudo sobre o Google Glass</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
-
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
     
 </head>
-<script language="javascript" src="_javascript/funcoes.js"<script></script>
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calctotal() {
+          var qtd = parseInt(document.getElementById('cQtd').value);
+           tot = qtd * 1500;
+          document.getElementById('cTot').value = tot;
+        }
+    </script>
 <body>
 <div id="interface">
 
@@ -31,43 +38,74 @@
     </nav>
     </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+<section id="corpo-full">
+    <article id = "noticia-principal">
+        <header id = "cabecalho-artigo">
+            <hgroup>
+                <h3>Fale Conosco > Contato</h3>
+                <h1>Formulário de Contato</h1>
+                 <h2>por Gustavo Guanabara</h2>
+                 <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+            </hgroup>
+        </header>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+<form method="post" id="fContato" action="contato@hotmail.com" oninput="calctotal()">
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
+<fieldset id ="usuario"><legend>Identificação do Usuário</legend>
+    <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" /></p>
+    <p><label for="cSenha">Senha: </label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="Digite sua senha"/></ins></p>
+    <p><label for="cMail">E-mail: </label><input type="email" name="Tmail" id="cMail" size="20" maxlenght = "40" placeholder="Digite seu E-mail"/></p>
+    <fieldset id="sexo"><legend>Sexo</legend>
+        <input type="radio" name="tSexo" id="cMasc" checked/><label for="cMasc">Masculino</label><br/>
+        <input type="radio" name="tSexo" id="cFem"/><label for="cFem">Feminino</label>
+    </fieldset>
+    <p><label for ="cNasc">Data de Nascimento: </label><input type="date" name="tNasc"id="cNasc" /></p>
 
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
+</fieldset>
+<fieldset id ="endereco"><legend>Endereço do Usuário</legend>
+    <p><label for="cLog">Logradouro: </label><input type="text" name="tLog" id="cLog" size="13" maxlength="80" placeholder="Rua, Av, Trav..."></p>
+    <p><label for="cNum">Número: <label><input type="number" name="tNum" id="cNum" min="0" max="9999" placeholder="9999"></p>
+    <p><label for="cEst">Estado: </label><select name="tEst" id="cEst">
+        <option value = "PE" selected>Pernambuco</option>
+        <option value = "SP">São Paulo</option>
+        <option value = "RJ">Rio de Janeiro</option>
+    </select></p>
+    <p><label for="cCid">Cidade:</label>
+        <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade" list="cidades">
+        <datalist id ="cidades">
+            <option value="Recife"></option>
+            <option value="Olinda"></option>
+            <option value="Jaboatão dos Guararapes"></option>
+        </datalist>
+    </p>
 
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
+</fieldset>
+<fieldset id ="mensagem"><legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência: </label>
+        Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Máx</p>
+    <p><label for="cMsg">Mensagem: </label>
+        <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe sua msg!" ></textarea></p>
+</fieldset>
+<fieldset id ="pedido"><legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tPed" id="cPed" checked/>
+        <label for="cPed">Gostaria de adquirir um Google Glass quando disponível </label></p>
+    <p><label for="cCor">Cor: </label>
+        <input type="color" name="tCor" id="cCor" value="#0000FF"/></p>
+    <p><label for="cQtd"/>Quantidade: </label>
+        <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/>
+    </p>
+    <p><label for="cTot"/>Preço Total: R$ </label>
+        <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly/>
+    </p>
+</fieldset></legend>
+    <input type="image" src="_imagens/botao-enviar.png"/>
+</form>
 
 <footer id = "rodape">
-<p>Copyright &copy; 2013 - by Gustavo Guanabara <br/>
-<a href="http://facebook.com/cursoemvideo" target="_blank">Facebook</a> | 
-<a href="http://twitter.com/cursoemvideo" target="blank">Twitter</a></p>
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara <br/>
+        <a href="http://facebook.com/cursoemvideo" target="_blank">Facebook</a> | 
+        <a href="http://twitter.com/cursoemvideo" target="blank">Twitter</a>
+    </p>
 </footer>
 </div>
 </body>
